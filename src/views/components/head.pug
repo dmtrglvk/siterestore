@@ -1,0 +1,58 @@
+head
+	meta(charset='UTF-8')
+	meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+	meta(name='format-detection', content='telephone=no')
+	title SiteRestore
+	link(media='screen', rel='stylesheet', href='css/owl.carousel.min.css')
+	link(media='screen', rel='stylesheet', href='css/owl.theme.default.min.css')
+	link(media='screen', rel='stylesheet', href='css/jquery.formstyler.css')
+	link(media='screen', rel='stylesheet', href='css/main.css')
+
+	script.
+		// Storing SVG Sprite in localStorage
+		; (function (window, document) {
+			'use strict';
+			var file = 'images/svg/svg.svg',
+				revision = new Date().getTime();
+			if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
+				return true;
+			var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+				request,
+				data,
+				insertIT = function () {
+					document.body.insertAdjacentHTML('afterbegin', data);
+				},
+				insert = function () {
+					if (document.body) insertIT();
+					else document.addEventListener('DOMContentLoaded', insertIT);
+				};
+			if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+				data = localStorage.getItem('inlineSVGdata');
+				if (data) {
+					insert();
+					return true;
+				}
+			}
+			try {
+				request = new XMLHttpRequest();
+				request.open('GET', file + '?v' + Date.now(), true);
+				request.onload = function () {
+					if (request.status >= 200 && request.status < 400) {
+						data = request.responseText;
+						insert();
+						if (isLocalStorage) {
+							localStorage.setItem('inlineSVGdata', data);
+							localStorage.setItem('inlineSVGrev', revision);
+						}
+					}
+				}
+				request.send();
+			}
+			catch (e) {
+			}
+		}(window, document));
+
+	script(src ='js/vendors/jquery.min.js')
+	script(src ='js/vendors/owl.carousel.min.js')
+	script(src ='js/vendors/jquery.formstyler.min.js')
+	script(src ='js/main.js')
