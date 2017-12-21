@@ -187,3 +187,157 @@ html(lang='ru')
 								p
 									strong Скидка за объем!
 									| &nbsp;Чем больше сайтов — тем дешевле.
+					h2 Дополнительные услуги
+					.sevice-wrap
+						.sevice-box
+							.main-info.flex-container.js-drop-opener
+								.l-side
+									strong Перенос сайта на безопасный хостинг
+								.r-side
+									strong 5000 р. в год
+							.drop-info.js-drop-opened
+								p Ежемесячное обслуживание сайта (еженедельная проверка сайта на вирусы и очистка при необходимости, установка патчей, устранение новых известных уязвимостей, решение технических вопросов, что-то еще). Минимум 3 месяца
+						.sevice-box
+							.main-info.flex-container.js-drop-opener
+								.l-side
+									strong Возьмем ваш сайт на сопровождение
+								.r-side
+									strong от 2000 р. в месяц
+							.drop-info.js-drop-opened
+								p Ежемесячное обслуживание сайта (еженедельная проверка сайта на вирусы и очистка при необходимости, установка патчей, устранение новых известных уязвимостей, решение технических вопросов, что-то еще). Минимум 3 месяца
+						.sevice-box
+							.main-info.flex-container.js-drop-opener
+								.l-side
+									strong Правильная настройка вашего сервера с точки зрения безопасности
+								.r-side
+									strong 10 000 р. в год
+							.drop-info.js-drop-opened
+								p Ежемесячное обслуживание сайта (еженедельная проверка сайта на вирусы и очистка при необходимости, установка патчей, устранение новых известных уязвимостей, решение технических вопросов, что-то еще). Минимум 3 месяца
+					h2 Калькулятор
+					ul.tab-menu.js-tab-menu
+						li
+							a(href="#tab01" class="active") Лечение сайтов
+						li
+							a(href="#tab02") Обслуживание
+						li
+							a(href="#tab03") Прочие услуги
+					.tab-content.js-tab-content(id="tab01" class="active")
+						.tab-block.flex-container
+							.picture-side
+								img(src="images/icon-16.svg")
+							.info-block
+								.form-wrap
+									.form-item-holder
+										input(type="checkbox", id="checkbox01")
+										label(for="checkbox01") Я хочу перенести
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайт на безопасный хостинг
+									.form-item-holder
+										input(type="checkbox", id="checkbox02")
+										label(for="checkbox02") Мне нужно ежемесячное обслуживание для
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайтов
+								.result-row
+									.result-item
+										strong.blue Стоимость:&nbsp;
+										span 20 000 рублей
+									.result-item
+										strong.blue Сроки:&nbsp;
+										span 2 месяца
+					.tab-content.js-tab-content(id="tab02")
+						.tab-block.flex-container
+							.picture-side
+								img(src="images/icon-16.svg")
+							.info-block
+								.form-wrap
+									.form-item-holder
+										input(type="checkbox", id="checkbox03")
+										label(for="checkbox03") Я хочу перенести
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайт на безопасный хостинг
+									.form-item-holder
+										input(type="checkbox", id="checkbox04")
+										label(for="checkbox04") Мне нужно ежемесячное обслуживание для
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайтов
+								.result-row
+									.result-item
+										strong.blue Стоимость:&nbsp;
+										span 10 000 рублей
+									.result-item
+										strong.blue Сроки:&nbsp;
+										span 1 месяц
+					.tab-content.js-tab-content(id="tab03")
+						.tab-block.flex-container
+							.picture-side
+								img(src="images/icon-16.svg")
+							.info-block
+								.form-wrap
+									.form-item-holder
+										input(type="checkbox", id="checkbox05")
+										label(for="checkbox05") Я хочу перенести
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайт на безопасный хостинг
+									.form-item-holder
+										input(type="checkbox", id="checkbox06")
+										label(for="checkbox06") Мне нужно ежемесячное обслуживание для
+									.form-item-holder
+										select
+											option 1
+											option 2
+											option 3
+										label сайтов
+								.result-row
+									.result-item
+										strong.blue Стоимость:&nbsp;
+										span 30 000 рублей
+									.result-item
+										strong.blue Сроки:&nbsp;
+										span 3 месяца
+					a.green-btn.lg(href="#") Оформить заказ
+			.order-block
+				.container.flex-container
+					.sale-box
+						strong.blue.ttl Акция!
+						p Заказав у нас чистку сайта от вирусов вы получаете подарок от наших партнеров:
+						.partner-box
+							img(src="images/partner-logo.png")
+						p 3 месяца бесплатного мониторинга в сервисе
+							a(href="nazamok.com")  Nazamok.com
+						.sale-pict
+							img(src="images/icon-17.svg")
+					.order-box
+						h2 Заказать лечение сайта
+						p Укажите адреса сайтов и опишите проблему, с которой вы столкнулись.Наш менеджер свяжется с вами после изучения всех деталей.
+						.form-block
+							form(action="#")
+								fieldset
+									.top-row.holder
+										input(type="email", placeholder="Электронная почта")
+										input(type="tel", placeholder="Телефон (обязательно)")
+									.fields-box
+										input(type="url", placeholder="Адрес сайта")
+										textarea(placeholder="Опишите суть проблемы")
+									.bottom-row.flex-container
+										input(type="file")
+										a.green-btn.md(href="#") Оставить заявку
