@@ -2,19 +2,18 @@ doctype html
 html(lang='ru')
 	include components/head.pug
 	body
-		include components/header.pug
+		//include components/header.pug
 		.content
 			.promo-block
 				.container
-					.top-line
-						a(href="tel:78905626211" class="tel") +7 (890) 562-62-11
-						a(href="mailto:support@siterestore.ru" class="mail") support@siterestore.ru
-					.promo-banner
-						img(src="images/promo-img.png", alt="")
-						span.promo-text лечение сайта
-							br
-							| всего за
-							span.green  5000 рублей
+					.promo-banner.flex-container
+						.left-part
+							.logo-img
+								img(src="images/logo.svg")
+							span.promo-text лечение сайта всего за
+								span.green  5000 рублей
+						.right-part
+							img(src="images/right-banner.svg")
 					h1 Оперативно восстановим работоспособность вашего сайта после заражения
 						span.blue  и защитим от вирусов!
 					a.green-btn.lg(href="#") Оставить заявку
@@ -189,7 +188,7 @@ html(lang='ru')
 									| &nbsp;Чем больше сайтов — тем дешевле.
 					h2 Дополнительные услуги
 					.sevice-wrap
-						.sevice-box
+						.service-box
 							.main-info.flex-container.js-drop-opener
 								.l-side
 									strong Перенос сайта на безопасный хостинг
@@ -197,7 +196,7 @@ html(lang='ru')
 									strong 5000 р. в год
 							.drop-info.js-drop-opened
 								p Ежемесячное обслуживание сайта (еженедельная проверка сайта на вирусы и очистка при необходимости, установка патчей, устранение новых известных уязвимостей, решение технических вопросов, что-то еще). Минимум 3 месяца
-						.sevice-box
+						.service-box
 							.main-info.flex-container.js-drop-opener
 								.l-side
 									strong Возьмем ваш сайт на сопровождение
@@ -205,7 +204,7 @@ html(lang='ru')
 									strong от 2000 р. в месяц
 							.drop-info.js-drop-opened
 								p Ежемесячное обслуживание сайта (еженедельная проверка сайта на вирусы и очистка при необходимости, установка патчей, устранение новых известных уязвимостей, решение технических вопросов, что-то еще). Минимум 3 месяца
-						.sevice-box
+						.service-box
 							.main-info.flex-container.js-drop-opener
 								.l-side
 									strong Правильная настройка вашего сервера с точки зрения безопасности
@@ -227,19 +226,19 @@ html(lang='ru')
 								img(src="images/icon-16.svg")
 							.info-block
 								.form-wrap
-									.form-item-holder
+									.form-item-holder.holder
 										input(type="checkbox", id="checkbox01")
 										label(for="checkbox01") Я хочу перенести
-									.form-item-holder
+									.form-item-holder.holder
 										select
 											option 1
 											option 2
 											option 3
 										label сайт на безопасный хостинг
-									.form-item-holder
+									.form-item-holder.holder
 										input(type="checkbox", id="checkbox02")
 										label(for="checkbox02") Мне нужно ежемесячное обслуживание для
-									.form-item-holder
+									.form-item-holder.holder
 										select
 											option 1
 											option 2
@@ -335,9 +334,13 @@ html(lang='ru')
 									.top-row.holder
 										input(type="email", placeholder="Электронная почта")
 										input(type="tel", placeholder="Телефон (обязательно)")
-									.fields-box
+									.fields-box.holder
 										input(type="url", placeholder="Адрес сайта")
 										textarea(placeholder="Опишите суть проблемы")
 									.bottom-row.flex-container
 										input(type="file")
 										a.green-btn.md(href="#") Оставить заявку
+						.note
+							p Нажимая на кнопку «Отправить», вы даете согласие на обработку своих персональных данных на основании Федерального закона № 152-ФЗ
+		include components/footer.pug
+		include components/popup.pug

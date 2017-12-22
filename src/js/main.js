@@ -7,9 +7,15 @@ $(document).ready(function(){
 	});
 	accordion();
 	tabs();
+	headerFixed ();
 
 	$('.form-item-holder select').styler();
+	$('.bottom-row input[type="file"]').styler();
 })
+
+$(window).scroll(function(){
+	headerFixed ();
+});
 
 function accordion(){
 	var opener = $('.js-drop-opener'),
@@ -32,4 +38,18 @@ function tabs() {
 		tabLink.removeClass('active');
 		$(this).addClass('active');
 	})
+}
+
+function headerFixed () {
+	if ($(window).scrollTop() > 500) {
+		$('.header').addClass('fixed').animate({
+			top: 0
+		}, 500)
+	} else {
+		// $('.fixed').animate({
+		// 	top: '-100px'
+		// }, 500, function(){
+		// 	$(this).removeClass('fixed')
+		// })
+	}
 }

@@ -1,0 +1,18 @@
+.popup-box
+	.order-box
+		h2 Заказать лечение сайта
+		p Укажите адреса сайтов и опишите проблему, с которой вы столкнулись.Наш менеджер свяжется с вами после изучения всех деталей.
+		.form-block
+			form(action="#")
+				fieldset
+					.top-row.holder
+						input(type="email", placeholder="Электронная почта")
+						input(type="tel", placeholder="Телефон (обязательно)")
+					.fields-box.holder
+						input(type="url", placeholder="Адрес сайта")
+						textarea(placeholder="Опишите суть проблемы")
+					.bottom-row.flex-container
+						input(type="file")
+						a.green-btn.md(href="#") Оставить заявку
+		.note
+			p Нажимая на кнопку «Отправить», вы даете согласие на обработку своих персональных данных на основании Федерального закона № 152-ФЗ
