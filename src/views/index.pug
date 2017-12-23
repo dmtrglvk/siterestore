@@ -2,7 +2,7 @@ doctype html
 html(lang='ru')
 	include components/head.pug
 	body
-		//include components/header.pug
+		include components/header.pug
 		.content
 			.promo-block
 				.container
@@ -16,7 +16,7 @@ html(lang='ru')
 							img(src="images/right-banner.svg")
 					h1 Оперативно восстановим работоспособность вашего сайта после заражения
 						span.blue  и защитим от вирусов!
-					a.green-btn.lg(href="#") Оставить заявку
+					a.green-btn.lg.open-popup(href="#order-popup") Оставить заявку
 			.grey-block
 				.container
 					h2 Какие проблемы вы видите на своем сайте?

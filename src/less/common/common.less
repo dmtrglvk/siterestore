@@ -82,16 +82,36 @@ button {
 		border-radius: 17px;
 	}
 }
+.sticky-wrapper {
+	padding-bottom: 8px;
+
+	@media @mobile {
+		padding: 0;
+	}
+}
 .header {
 	padding: 40px 0 0;
 	background-color: #fff;
+
+	@media @mobile {
+		padding-top: 11px;
+	}
+
 	.flex-container {
 		align-items: center;
+
+		@media @mobile {
+			flex-direction: column;
+		}
 	}
 	.green-btn {
 		display: none;
+
+		@media @mobile {
+			display: block;
+		}
 	}
-	&.fixed {
+	.fixed & {
 		padding: 11px 0 15px;
 		box-shadow: 0 9px 18px 0 rgba(36, 83, 145, 0.14);
 		position: fixed;
@@ -111,6 +131,10 @@ button {
 	text-indent: -9999px;
 	display: none;
 	.fixed & {
+		display: block;
+	}
+
+	@media @mobile {
 		display: block;
 	}
 }
@@ -140,12 +164,21 @@ button {
 .header-contacts {
 	padding-left: 112px;
 	text-align: left;
+
+	@media @mobile {
+		padding: 20px 0;
+		text-align: center;
+	}
 }
 .tel, .mail {
 	font: 24px/28px @ss-pro-reg;
 	text-decoration: none;
 	display: inline-block;
 	margin-right: 35px;
+
+	@media @mobile {
+		margin: 0;
+	}
 }
 .tel {
 	color: #000;
@@ -1142,5 +1175,71 @@ button {
 	padding: 15px 0 50px;
 }
 .popup-box {
+	display: none;
+	position: absolute;
+	padding: 100px 30px 0;
+	width: 100%;
+	box-sizing: border-box;
+	z-index:1003;
+	@media @mobile {
+		padding-top: 60px;
+	}
+	h2,
+	p {
+		text-align: center;
+	}
+	.order-box {
+		margin: 0 auto;
+	}
+	.close-btn {
+		width:50px;
+		height:50px;
+		position: absolute;
+		top:50px;
+		right:50px;
+		text-indent: -9999px;
+
+		@media @mobile {
+			width:25px;
+			height:25px;
+			top: 25px;
+			right: 25px;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 50px;
+			height: 2px;
+			background: @green;
+			@media @mobile {
+				width:25px;
+			}
+		}
+		&:before {
+			transform: rotate(45deg)
+		}
+		&:after {
+			transform: rotate(-45deg)
+		}
+	}
+	h2 {
+		&:extend(.content h2);
+	}
+}
+.fader {
+	background: rgba(255,255,255,0.9);
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1002;
 	display: none;
 }
