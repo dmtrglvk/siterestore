@@ -71,6 +71,7 @@ function initPopups() {
 				popupPosition(lightbox_box);
 				lightbox_box.fadeIn();
 				fader.fadeIn();
+				$('.page').addClass('blurred');
 			}
 		});
 		e.preventDefault();
@@ -87,6 +88,7 @@ function initPopups() {
 		}, 500);
 		setTimeout(function(){
 			fader.fadeOut();
+			$('.page').removeClass('blurred');
 		}, 100)
 	}
 
@@ -110,7 +112,7 @@ function initPopups() {
 
 function popupPosition(popup){
 
-	if(popup.height() > $(window).height()) {
+	if(popup.outerHeight() > $(window).height()) {
 		popup.css({
 			'position': 'absolute',
 			'top': $(window).scrollTop() + 20,
@@ -121,7 +123,7 @@ function popupPosition(popup){
 	} else {
 		popup.css({
 			'top': '50%',
-			'margin-top':-popup.height()/2 + 'px',
+			'margin-top':-popup.outerHeight()/2 + 'px',
 			'position':'fixed',
 			'tranform': 'translateY(-50%)'
 		});
