@@ -8,16 +8,50 @@ $(document).ready(function(){
 	accordion();
 	tabs();
 
-	$(".header").sticky({
-		className: 'fixed',
-		zIndex: 1001
-	});
-
 	initPopups();
 
 	$('.form-item-holder select').styler();
 	$('.bottom-row input[type="file"]').styler();
-})
+
+
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('.fixed').outerHeight();
+
+	$(window).scroll(function(event){
+		didScroll = true;
+	});
+
+	setInterval(function() {
+		if (didScroll) {
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250);
+
+	function hasScrolled() {
+		var st = $(this).scrollTop();
+
+		if(Math.abs(lastScrollTop - st) <= delta)
+			return;
+
+		if (st > lastScrollTop && st > navbarHeight){
+			$('.fixed').attr('class', 'fixed nav-up');
+		} else {
+			if(st + $(window).height() < $(document).height() && st > 100) {
+				$('.fixed').attr('class', 'fixed nav-down');
+			}
+		}
+
+		if(st < 100) {
+			$('.fixed').attr('class', 'fixed onTop');
+		}
+
+		lastScrollTop = st;
+	}
+
+});
 
 function accordion(){
 	var opener = $('.js-drop-opener'),
@@ -72,6 +106,7 @@ function initPopups() {
 				lightbox_box.fadeIn();
 				fader.fadeIn();
 				$('.page').addClass('blurred');
+				$('body').addClass('popup-opened');
 			}
 		});
 		e.preventDefault();
@@ -89,6 +124,7 @@ function initPopups() {
 		setTimeout(function(){
 			fader.fadeOut();
 			$('.page').removeClass('blurred');
+			$('body').removeClass('popup-opened');
 		}, 100)
 	}
 
