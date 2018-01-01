@@ -32,7 +32,6 @@ button {
 	margin: 0 auto;
 	@media @medium {
 		padding: 0 15px;
-		overflow: hidden;
 	}
 }
 .holder{
@@ -150,6 +149,43 @@ button {
 		top: -100px;
 	}
 }
+.fixed {
+	.flex-container {
+		@media @mobile {
+			display: block;
+			
+			.logo {
+				float: left;
+				margin: 12px 0 0;
+			}
+			.header-btn {
+				float: right;
+				width: 44px;
+				height: 44px;
+
+				.green-btn.sm {
+					width: 44px;
+					height: 44px;
+					text-indent: -9999px;
+					overflow: hidden;
+					border-radius: 50%;
+					box-shadow: none;
+					position: relative;
+
+					&:after {
+						content:"";
+						background: url(http://citi-kitty.ru/new/template/images/ico-sprite-3.png) 0 -84px no-repeat;
+						width: 21px;
+						height: 21px;
+						position: absolute;
+						top: 11px;
+						left: 11px;
+					}
+				}
+			}
+		}
+	}
+}
 .logo {
 	background: url("../images/logo.svg") no-repeat;
 	width: 214px;
@@ -208,8 +244,18 @@ button {
 		}
 	}
 	h1 {
+		font: 52px/56px @ss-pro-bold;
+		color: @dark-brown;
+		margin-bottom: 50px;
+		.blue {
+			display: block;
+		}
 		@media @medium {
+			font: 46px/50px @ss-pro-bold;
 			margin: 0 0 20px;
+		}
+		@media @mobile {
+			font: 32px/36px @ss-pro-bold;
 		}
 	}
 }
@@ -777,6 +823,7 @@ button {
 		padding: 20px 30px;
 		cursor: pointer;
 		align-items: center;
+		box-sizing: border-box;
 		@media @mobile {
 			display: block;
 		}
